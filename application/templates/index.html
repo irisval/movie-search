@@ -1,0 +1,20 @@
+{% from '_formhelper.html' import render_field with context %}
+<!DOCTYPE html>
+<head>
+	<title>Playlist Generator</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+<form method="POST" action="">
+	{{ form.csrf_token }}
+	{% for field in form %}
+		{{ render_field(field) }}
+	{% endfor %}
+	</form>
+
+{# <form method="GET" action="">
+{% for s in results %}
+	<input type="submit" value="{{ s['title'] }}">
+{% endfor %}
+</form>
+</body> #}
